@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/levels/players.gd" type="Script" id=1]
+[ext_resource path="res://sprite_sample/PNG/Environment/ground_grass.png" type="Texture" id=2]
+[ext_resource path="res://src/actors/enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/levels/player_1.gd" type="Script" id=4]
+[ext_resource path="res://sprite/player/Ladii.png" type="Texture" id=5]
+[ext_resource path="res://sprite/player/Eaint.png" type="Texture" id=6]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 170, 0, 170, 80, 0, 80 )
+
+[sub_resource type="TileSet" id=1]
+0/name = "ground_grass.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 181, 0, 170, 80 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 23.125, 72.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 20.625, 66.25 )
+
+[node name="levelTemplate" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 170, 80 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65535, 536870912, 0, 131071, 536870912, 0, 196607, 536870912, 0, 262143, 536870912, 0, 327679, 536870912, 0, 393215, 536870912, 0, 458751, 536870912, 0, 393218, 536870912, 0, 393219, 536870912, 0, 393223, 536870912, 0, 524287, 536870912, 0, 458752, 536870912, 0, 458753, 536870912, 0, 458754, 536870912, 0, 458755, 536870912, 0, 458756, 536870912, 0, 458757, 536870912, 0, 458758, 536870912, 0, 458759, 536870912, 0, 458760, 536870912, 0, 589823, 536870912, 0, 524288, 536870912, 0, 524289, 536870912, 0, 524290, 536870912, 0, 524291, 536870912, 0, 524292, 536870912, 0, 524293, 536870912, 0, 524294, 536870912, 0, 524295, 536870912, 0, 524296, 536870912, 0 )
+
+[node name="enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 991, 473 )
+
+[node name="players" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="player_1" type="KinematicBody2D" parent="players"]
+position = Vector2( 168, 447 )
+collision_mask = 10
+script = ExtResource( 4 )
+gravity = 4000
+
+[node name="sprite" type="Sprite" parent="players/player_1"]
+position = Vector2( 89, 18 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="players/player_1"]
+position = Vector2( 83.5, 33 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 3 )
+
+[node name="sprite2" type="Sprite" parent="players/player_1"]
+position = Vector2( -30, 18 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="players/player_1"]
+position = Vector2( -27, 37 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 4 )
