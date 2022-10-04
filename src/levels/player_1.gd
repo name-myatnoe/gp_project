@@ -2,6 +2,11 @@ extends action
 
 onready var active_manager= get_parent()
 
+export var impulse = 1000.0
+
+func _on_enemyDetector_area_entered(area):
+	velocity = calculate_stomp_velocity(velocity,impulse)
+
 func _physics_process(delta):
 	var is_active = active_manager.active
 	
@@ -37,5 +42,13 @@ func calculate_move_velocity(
 	if is_jump_interrupted:
 		new_velocity.y = 0
 	return new_velocity
+	
+func calculate_stomp_velocity(linear_velocity : Vector2,impulse : float) -> Vector2:
+	var new_velocity := linear_velocity
+	new_velocity.y = -impulse
+	return new_velocity
+
+
+
 
 

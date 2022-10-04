@@ -31,7 +31,7 @@ process_parent = true
 physics_process_parent = true
 
 [node name="StompDetector" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
