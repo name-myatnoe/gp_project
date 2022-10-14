@@ -1,0 +1,250 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://sprite_sample/PNG/Environment/ground_grass.png" type="Texture" id=1]
+[ext_resource path="res://src/actors/enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/actors/players.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Backgrounds/_02_trees and bushes.png" type="Texture" id=4]
+[ext_resource path="res://Backgrounds/_11_background.png" type="Texture" id=5]
+[ext_resource path="res://Backgrounds/_10_distant_clouds.png" type="Texture" id=6]
+[ext_resource path="res://Backgrounds/_09_distant_clouds1.png" type="Texture" id=7]
+[ext_resource path="res://Backgrounds/_05_hill1.png" type="Texture" id=8]
+[ext_resource path="res://Backgrounds/_06_hill2.png" type="Texture" id=9]
+[ext_resource path="res://Backgrounds/_03_distant_trees.png" type="Texture" id=10]
+[ext_resource path="res://Backgrounds/_07_huge_clouds.png" type="Texture" id=11]
+[ext_resource path="res://Backgrounds/_04_bushes.png" type="Texture" id=12]
+[ext_resource path="res://Backgrounds/_01_ground.png" type="Texture" id=13]
+[ext_resource path="res://tileset.png" type="Texture" id=14]
+
+[sub_resource type="ConcavePolygonShape2D" id=6]
+segments = PoolVector2Array( 0, 0, 75, 0, 75, 0, 75, 64, 75, 64, 0, 64, 0, 64, 0, 0 )
+
+[sub_resource type="ConcavePolygonShape2D" id=7]
+segments = PoolVector2Array( 0, 0, 75, 0, 75, 0, 75, 64, 75, 64, 0, 64, 0, 64, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 75, 0, 75, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 100, 0, 100, 80, 0, 120 )
+
+[sub_resource type="TileSet" id=3]
+resource_local_to_scene = true
+0/name = "ground_grass.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 75, 0, 75, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 6 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "tileset.png 1"
+1/texture = ExtResource( 14 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 100, 128 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 9 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, -1 )
+tile_set = SubResource( 3 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -196586, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 393216, 0, 0, 458752, 0, 0, 458758, 1, 0, 458764, 1, 0, 458771, 1, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0 )
+
+[node name="enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1094, 499 )
+
+[node name="players" parent="." instance=ExtResource( 3 )]
+position = Vector2( 13, 6 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 2, 1 )
+motion_mirroring = Vector2( 272, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 3516, 62 )
+scale = Vector2( 3.60449, 1 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 999.5, -50 )
+scale = Vector2( 1.146, 1 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2/Sprite"]
+position = Vector2( 2134.82, 104 )
+scale = Vector2( 1.31331, 1 )
+texture = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2/Sprite"]
+position = Vector2( 3739.54, 112 )
+scale = Vector2( 1.146, 1 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 2943, 41 )
+scale = Vector2( 1.02259, 1.02136 )
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3/Sprite2"]
+position = Vector2( 1524.56, 14.6864 )
+scale = Vector2( 0.988894, 0.978774 )
+texture = ExtResource( 7 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3/Sprite2"]
+position = Vector2( 2943, -62 )
+scale = Vector2( 1.02259, 1.02136 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3/Sprite2"]
+position = Vector2( -2372.41, 127.282 )
+scale = Vector2( 1.04569, 1.04317 )
+texture = ExtResource( 7 )
+offset = Vector2( 8720.55, -556.574 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 718.5, -66 )
+scale = Vector2( 0.863769, 1 )
+texture = ExtResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4/Sprite"]
+position = Vector2( 1896.92, 19 )
+scale = Vector2( 0.863769, 1 )
+texture = ExtResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4/Sprite/Sprite"]
+position = Vector2( 1869.73, 24 )
+scale = Vector2( 0.863769, 1 )
+texture = ExtResource( 11 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 864, -40 )
+texture = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5/Sprite"]
+position = Vector2( 2037, -40 )
+texture = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5/Sprite/Sprite"]
+position = Vector2( 1910, 97 )
+texture = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5/Sprite/Sprite/Sprite"]
+position = Vector2( 1841.5, -56 )
+scale = Vector2( 0.806152, 1 )
+texture = ExtResource( 9 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2( -224, -182 )
+texture = ExtResource( 8 )
+offset = Vector2( 1077, 153 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6/Sprite"]
+position = Vector2( 3123, 109 )
+texture = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6/Sprite/Sprite"]
+position = Vector2( 2788.5, -34 )
+scale = Vector2( 1.72803, 1 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2( 4016, -11 )
+scale = Vector2( 3.73828, 1 )
+texture = ExtResource( 12 )
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer8"]
+position = Vector2( 875, 77 )
+texture = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer8/Sprite"]
+position = Vector2( 2213, -3 )
+scale = Vector2( 1.19141, 1 )
+texture = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer8/Sprite/Sprite"]
+position = Vector2( 2027.02, 1 )
+texture = ExtResource( 10 )
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer9"]
+position = Vector2( 1018, -39 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -67, -18 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer10"]
+position = Vector2( 1081, -15 )
+scale = Vector2( 1.00342, 1 )
+texture = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3245, -39 )
+scale = Vector2( 1.1709, 1 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Sprite"]
+position = Vector2( 2317.45, -3 )
+scale = Vector2( 1.26397, 1 )
+texture = ExtResource( 4 )

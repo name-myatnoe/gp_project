@@ -1,23 +1,23 @@
 extends action
 
-onready var active_manager= get_parent()
 
-export var impulse = 1000.0
 
-func _on_enemyDetector_area_entered(area):
-	velocity = calculate_stomp_velocity(velocity,impulse)
+export var stomp_impulse = 1000.0
 
-func _physics_process(delta):
-	var is_active = active_manager.active
+func _on_enemyDetector_area_entered(_area):
+	velocity = calculate_stomp_velocity(velocity,stomp_impulse)
+
+func _physics_process(_delta):
+
 	
-	if is_active ==1:
+
 		var direction := get_direction()
 		var is_jump_interrupted := Input.is_action_just_released("jump") and velocity.y < 0
 		velocity = calculate_move_velocity(velocity,speed,direction,is_jump_interrupted)
 		velocity = move_and_slide(velocity,normal_floor)
-	else :
-		var temp= 2
-	pass
+		
+	
+
 	
 func _ready():
 	pass
