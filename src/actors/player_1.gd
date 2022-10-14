@@ -1,10 +1,9 @@
-extends action
-
+extends actors
 
 
 export var stomp_impulse = 1000.0
 
-func _on_enemyDetector_area_entered(_area):
+func _on_enemyDetector_area_entered(area):
 	velocity = calculate_stomp_velocity(velocity,stomp_impulse)
 
 func _physics_process(_delta):

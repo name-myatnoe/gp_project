@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
-"class": "action",
+"class": "actors",
 "language": "GDScript",
-"path": "res://src/levels/moving_actor.gd"
+"path": "res://src/actors/moving_actor.gd"
 } ]
 _global_script_class_icons={
-"action": ""
+"actors": ""
 }
 
 [application]
@@ -49,6 +49,13 @@ jump={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="coins"
+2d_physics/layer_4="environment"
 
 [physics]
 
