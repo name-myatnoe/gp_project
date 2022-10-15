@@ -6,18 +6,16 @@ export var stomp_impulse = 1000.0
 func _on_enemyDetector_area_entered(area):
 	velocity = calculate_stomp_velocity(velocity,stomp_impulse)
 
+func _on_enemyDetector_body_entered(body):
+	queue_free()
+
 func _physics_process(_delta):
 
-	
+	var direction := get_direction()
+	var is_jump_interrupted := Input.is_action_just_released("jump") and velocity.y < 0
+	velocity = calculate_move_velocity(velocity,speed,direction,is_jump_interrupted)
+	velocity = move_and_slide(velocity,normal_floor)
 
-		var direction := get_direction()
-		var is_jump_interrupted := Input.is_action_just_released("jump") and velocity.y < 0
-		velocity = calculate_move_velocity(velocity,speed,direction,is_jump_interrupted)
-		velocity = move_and_slide(velocity,normal_floor)
-		
-	
-
-	
 func _ready():
 	pass
 
@@ -46,8 +44,3 @@ func calculate_stomp_velocity(linear_velocity : Vector2,impulse : float) -> Vect
 	var new_velocity := linear_velocity
 	new_velocity.y = -impulse
 	return new_velocity
-
-
-
-
-

@@ -4,11 +4,11 @@
 [ext_resource path="res://sprite_sample/PNG/Enemies/spikeMan_walk1.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 22.0
-height = 10.0
+radius = 21.0
+height = 6.0
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14, 16.5 )
+extents = Vector2( 17.75, 14.25 )
 
 [node name="enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -20,22 +20,21 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 20 )
+position = Vector2( -1, 15 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 1, 25 )
+position = Vector2( 2, 21 )
 rect = Rect2( -20, -25, 35, 35 )
 process_parent = true
 physics_process_parent = true
 
 [node name="StompDetector" type="Area2D" parent="."]
-position = Vector2( 0, -4 )
+position = Vector2( 0, -9 )
 collision_layer = 2
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 0, -16 )
+position = Vector2( 0, -12 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
