@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://sprite/player/Ladii_sprite.png" type="Texture" id=1]
+[ext_resource path="res://sprite/player/eaint_spite.png" type="Texture" id=2]
+[ext_resource path="res://src/actors/player_1.gd" type="Script" id=3]
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Ladii_idle"
+
+[sub_resource type="AnimationNodeStateMachine" id=6]
+states/Ladii_idle/node = SubResource( 5 )
+states/Ladii_idle/position = Vector2( 262, 77 )
+start_node = "Ladii_idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=7]
+
+[sub_resource type="Animation" id=8]
+resource_name = "Ladii_idle"
+length = 0.668
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../sprite2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 2,
+"values": [ 1, 2, 3, 3 ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 18.6111, 68.8309 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 20.625, 69.375 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 45.8333, 47 )
+
+[node name="testplayer" type="Node2D"]
+
+[node name="player_1" type="KinematicBody2D" parent="."]
+position = Vector2( 168, 447 )
+collision_mask = 8
+script = ExtResource( 3 )
+
+[node name="sprite" type="Sprite" parent="player_1"]
+position = Vector2( 74, 23 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 1 )
+hframes = 4
+frame = 2
+
+[node name="AnimationTree" type="AnimationTree" parent="player_1/sprite"]
+tree_root = SubResource( 6 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player_1/sprite"]
+anims/Ladii_idle = SubResource( 8 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player_1"]
+position = Vector2( 73, 41 )
+scale = Vector2( 0.805969, 0.813359 )
+shape = SubResource( 9 )
+
+[node name="sprite2" type="Sprite" parent="player_1"]
+position = Vector2( 25, 22 )
+scale = Vector2( 0.87, 0.8 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_1"]
+position = Vector2( 9, 45 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 10 )
+
+[node name="Camera2D" type="Camera2D" parent="player_1"]
+position = Vector2( 123, -40 )
+current = true
+limit_left = -100
+limit_top = -1410065408
+
+[node name="enemyDetector" type="Area2D" parent="player_1"]
+position = Vector2( 40, 105 )
+scale = Vector2( 1.2, 1 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_1/enemyDetector"]
+modulate = Color( 0.172549, 0.117647, 0.823529, 1 )
+position = Vector2( -1.78814e-06, -49 )
+shape = SubResource( 11 )
+
+[connection signal="area_entered" from="player_1/enemyDetector" to="player_1" method="_on_enemyDetector_area_entered"]
