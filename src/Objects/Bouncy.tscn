@@ -20,8 +20,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 62.0
-height = 18.0
+radius = 45.0
+height = 10.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
@@ -32,24 +32,28 @@ loop = true
 radius = 53.1507
 
 [node name="Bouncy" type="Area2D"]
+position = Vector2( -2, -1 )
+collision_layer = 16
+collision_mask = 9
 script = ExtResource( 5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 156.5, 370.5 )
 scale = Vector2( 0.771845, 0.775 )
 frames = SubResource( 1 )
 animation = "idle "
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 152, 394 )
+modulate = Color( 0.329412, 0.588235, 0.698039, 1 )
+position = Vector2( -5, 23 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 3 )
 
 [node name="top checker" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top checker"]
-position = Vector2( 151, 364 )
 shape = SubResource( 4 )

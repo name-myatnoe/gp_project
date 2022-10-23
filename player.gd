@@ -1,9 +1,7 @@
 extends actors
 
-signal grounded_updated(is_ground)
-
 export var stomp_impulse = 1000.0
-
+export var bouncy=-2000
 
 func _on_enemyDetector_area_entered(_area):
 	velocity = calculate_stomp_velocity(velocity,stomp_impulse)
@@ -11,8 +9,8 @@ func _on_enemyDetector_area_entered(_area):
 func _on_enemyDetector_body_entered(_body):
 	queue_free()
 
-onready var bounce_raycasts=$BounceRaycasts
-
+func _on_Bouncy_body_entered(_body):
+	velocity.y=bouncy
 
 func _physics_process(_delta):
 
@@ -20,13 +18,7 @@ func _physics_process(_delta):
 	var is_jump_interrupted := Input.is_action_just_released("jump") and velocity.y < 0
 	velocity = calculate_move_velocity(velocity,speed,direction,is_jump_interrupted)
 	velocity = move_and_slide(velocity,normal_floor)
-	
-	var was_grounded=is_grounded
-	is_grounded=is_on_floor()
-	
-	if was_grounded==null|| was_grounded!=is_grounded:
-		emit_signal("grounded_updated",is_grounded)
-	
+				
 
 func _ready():
 	pass
@@ -52,22 +44,8 @@ func calculate_move_velocity(
 		new_velocity.y = 0
 	return new_velocity
 
-func _apply_movement(delta):
-	_check_bounce(delta)
-
 func calculate_stomp_velocity(linear_velocity : Vector2,impulse : float) -> Vector2:
 	var new_velocity := linear_velocity
 	new_velocity.y = -impulse
 	return new_velocity
-	
-func _check_bounce(delta):
-	if velocity.y >0:
-		for raycast in bounce_raycasts.get_children():
-			raycast.cast_to=Vector2.DOWN * velocity * delta +Vector2.DOWN
-			raycast.force_raycast_update()
-			if raycast.is_colliding() && raycast.get_collision_normal()==Vector2.UP:
-				velocity.y = (raycast.get_collision_point() -raycast.global_position -Vector2.DOWN).y
-				raycast.get_collider().entity.call_deferred("be_bounced_upon",self)
-				break
-
 
