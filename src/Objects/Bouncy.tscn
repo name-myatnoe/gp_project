@@ -41,6 +41,7 @@ script = ExtResource( 5 )
 scale = Vector2( 0.771845, 0.775 )
 frames = SubResource( 1 )
 animation = "idle "
+speed_scale = 0.5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
