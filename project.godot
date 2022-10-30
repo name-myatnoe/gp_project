@@ -24,6 +24,10 @@ config/name="gp_project"
 run/main_scene="res://src/levels/levelTemplate.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://src/levels/global.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

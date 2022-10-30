@@ -2,15 +2,27 @@ extends actors
 
 export var stomp_impulse = 1000.0
 export var bouncy=-2000
+var coins=0
 
 func _on_enemyDetector_area_entered(_area):
+	set_modulate(Color(1,0.3,0.3,0.3))
 	velocity = calculate_stomp_velocity(velocity,stomp_impulse)
 
 func _on_enemyDetector_body_entered(_body):
-	queue_free()
+	Global.lose_life()
+	$Timer.start()
+
+func _on_Timer_timeout():
+	set_modulate(Color(1,1,1,1))
+	
 
 func _on_Bouncy_body_entered(_body):
 	velocity.y=bouncy
+
+func _on_fallzone_body_entered(_body):
+	Global.lose_life()
+	if Global.lives>=1:
+		get_tree().reload_current_scene()
 
 func _physics_process(_delta):
 
@@ -48,4 +60,6 @@ func calculate_stomp_velocity(linear_velocity : Vector2,impulse : float) -> Vect
 	var new_velocity := linear_velocity
 	new_velocity.y = -impulse
 	return new_velocity
-
+ 
+func add_coins():
+	coins+=1
