@@ -24,9 +24,9 @@ config/name="gp_project"
 run/main_scene="res://src/levels/levelTemplate.tscn"
 config/icon="res://icon.png"
 
-[display]
+[autoload]
 
-window/stretch/mode="2d"
+Global="*res://src/levels/global.gd"
 
 [gui]
 
