@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/actors/Camera2D.gd" type="Script" id=1]
-[ext_resource path="res://player.gd" type="Script" id=2]
+[ext_resource path="res://src/actors/player.gd" type="Script" id=2]
 [ext_resource path="res://sprite/player/eaint_spite.png" type="Texture" id=3]
 [ext_resource path="res://sprite/player/Ladii_sprite.png" type="Texture" id=4]
 
@@ -56,13 +56,16 @@ extents = Vector2( 40.8333, 54.875 )
 [node name="player" type="KinematicBody2D"]
 collision_mask = 8
 script = ExtResource( 2 )
+speed = Vector2( 400, 1500 )
+gravity = 4500
+bouncy = -2500
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( 35, -75 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 hframes = 4
-frame = 1
+frame = 3
 
 [node name="AnimationTree" type="AnimationTree" parent="sprite"]
 tree_root = SubResource( 6 )
@@ -83,7 +86,7 @@ position = Vector2( -13, -74 )
 scale = Vector2( 0.87, 0.8 )
 texture = ExtResource( 3 )
 hframes = 4
-frame = 1
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.81899e-12, -52 )
@@ -93,7 +96,7 @@ shape = SubResource( 10 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 12, -94 )
 current = true
-zoom = Vector2( 1.5, 1.5 )
+zoom = Vector2( 1.7, 1.7 )
 limit_left = -175
 limit_top = -710
 limit_right = 7480
@@ -102,10 +105,11 @@ limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
-smoothing_speed = 6.0
+smoothing_speed = 8.0
 drag_margin_left = 0.15
-drag_margin_top = 0.75
+drag_margin_top = 0.48
 drag_margin_right = 0.11
+drag_margin_bottom = 0.54
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource( 1 )
@@ -124,5 +128,8 @@ modulate = Color( 0.172549, 0.117647, 0.823529, 1 )
 position = Vector2( 0.833328, -48.875 )
 shape = SubResource( 11 )
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="enemyDetector" to="." method="_on_enemyDetector_area_entered"]
 [connection signal="body_entered" from="enemyDetector" to="." method="_on_enemyDetector_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
