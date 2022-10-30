@@ -5,10 +5,10 @@ export var bouncy=-2000
 var coins=0
 
 func _on_enemyDetector_area_entered(_area):
-	set_modulate(Color(1,0.3,0.3,0.3))
 	velocity = calculate_stomp_velocity(velocity,stomp_impulse)
 
 func _on_enemyDetector_body_entered(_body):
+	set_modulate(Color(1,0.3,0.3,0.3))
 	Global.lose_life()
 	$Timer.start()
 

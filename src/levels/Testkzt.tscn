@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://sprite_sample/PNG/Environment/ground_grass.png" type="Texture" id=1]
 [ext_resource path="res://src/actors/enemy.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://tileset.png" type="Texture" id=14]
 [ext_resource path="res://src/levels/Coin.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Objects/Bouncy.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/additional_function/fallzone.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/additional_function/HUB_heart.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConcavePolygonShape2D" id=6]
 segments = PoolVector2Array( 0, 0, 75, 0, 75, 0, 75, 64, 75, 64, 0, 64, 0, 64, 0, 0 )
@@ -345,4 +347,10 @@ position = Vector2( 3334.67, 158 )
 scale = Vector2( 1.00342, 1 )
 texture = ExtResource( 13 )
 
+[node name="fallzone" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4054, 979 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 18 )]
+
 [connection signal="body_entered" from="Bouncy" to="player" method="_on_Bouncy_body_entered"]
+[connection signal="body_entered" from="fallzone" to="player" method="_on_fallzone_body_entered"]
