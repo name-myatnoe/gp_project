@@ -8,4 +8,4 @@ func lose_life():
 	lives-=1
 	hub.load_heart()
 	if lives<=0:
-		get_tree().change_scene("res://src/levels/Testkzt.tscn")
+		get_tree().change_scene("res://src/levels/Game over.tscn")
