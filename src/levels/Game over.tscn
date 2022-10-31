@@ -122,7 +122,6 @@ texture = ExtResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="!!/Sprite"]
 position = Vector2( -230.164, 128.92 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
 [connection signal="pressed" from="VBoxContainer2/Main menu" to="." method="_on_Main_menu_pressed"]
