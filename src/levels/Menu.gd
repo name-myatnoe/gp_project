@@ -16,8 +16,7 @@ func _ready():
 
 
 func _on_Start_Button_pressed():
-	Global.lives=Global.max_lives
-	get_tree().change_scene("res://src/levels/Testkzt.tscn")
+		get_tree().change_scene("res://src/levels/Testkzt.tscn")
 
 
 func _on_Bye_pressed():

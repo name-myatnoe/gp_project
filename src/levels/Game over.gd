@@ -21,5 +21,4 @@ func _on_Main_menu_pressed():
 
 
 func _on_again_pressed():
-	Global.lives=Global.max_lives
 	get_tree().change_scene("res://src/levels/Testkzt.tscn")
