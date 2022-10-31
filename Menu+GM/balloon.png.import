@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/!!2.png-d91654f5f4ca1d3b062fda2cb3b97bdb.stex"
+path="res://.import/balloon.png-e398b2227b24c1d94d3f05ac4dee09b7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/!!2.png"
-dest_files=[ "res://.import/!!2.png-d91654f5f4ca1d3b062fda2cb3b97bdb.stex" ]
+source_file="res://Menu+GM/balloon.png"
+dest_files=[ "res://.import/balloon.png-e398b2227b24c1d94d3f05ac4dee09b7.stex" ]
 
 [params]
 

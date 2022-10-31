@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wind.2png.png-50988042686b67f55d82f47334d7fbac.stex"
+path="res://.import/!!2.png-b04be6ba52a95497dc8c5dc16cb893f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/wind.2png.png"
-dest_files=[ "res://.import/wind.2png.png-50988042686b67f55d82f47334d7fbac.stex" ]
+source_file="res://Menu+GM/!!2.png"
+dest_files=[ "res://.import/!!2.png-b04be6ba52a95497dc8c5dc16cb893f4.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Game_title.png-a8d4c945d9c1a0fdd76bda9a80ebe98e.stex"
+path="res://.import/7eaac6bdd74453be0b9d62199fde2d6c.jpg-3c9afcdd304e92b68d9679000e79619a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/Game_title.png"
-dest_files=[ "res://.import/Game_title.png-a8d4c945d9c1a0fdd76bda9a80ebe98e.stex" ]
+source_file="res://Menu+GM/7eaac6bdd74453be0b9d62199fde2d6c.jpg"
+dest_files=[ "res://.import/7eaac6bdd74453be0b9d62199fde2d6c.jpg-3c9afcdd304e92b68d9679000e79619a.stex" ]
 
 [params]
 

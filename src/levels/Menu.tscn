@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/levels/Menu.gd" type="Script" id=1]
-[ext_resource path="res://Backgrounds/7eaac6bdd74453be0b9d62199fde2d6c.jpg" type="Texture" id=2]
-[ext_resource path="res://Backgrounds/menu.bg.png" type="Texture" id=3]
+[ext_resource path="res://Menu+GM/7eaac6bdd74453be0b9d62199fde2d6c.jpg" type="Texture" id=2]
+[ext_resource path="res://Menu+GM/menu.bg.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/ArchitectsDaughter.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Backgrounds/Game_title.png" type="Texture" id=5]
+[ext_resource path="res://Menu+GM/Game_title.png" type="Texture" id=5]
 [ext_resource path="res://src/Objects/Wind.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/!!.tscn" type="PackedScene" id=7]
 
@@ -146,7 +146,7 @@ scale = Vector2( 0.585972, 0.689718 )
 texture = ExtResource( 3 )
 
 [node name="Title" type="Sprite" parent="ParallaxBackground/ParallaxLayer/7Eaac6Bdd74453Be0B9D62199Fde2D6c/C5B3200717E6A1015283235Df6A01F08"]
-position = Vector2( 1.77338, -2.55292 )
+position = Vector2( 68.9704, 2.87082 )
 texture = ExtResource( 5 )
 
 [connection signal="pressed" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_pressed"]
