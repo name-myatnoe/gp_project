@@ -65,7 +65,7 @@ position = Vector2( 35, -75 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 hframes = 4
-frame = 1
+frame = 2
 
 [node name="AnimationTree" type="AnimationTree" parent="sprite"]
 tree_root = SubResource( 6 )
@@ -86,7 +86,7 @@ position = Vector2( -13, -74 )
 scale = Vector2( 0.87, 0.8 )
 texture = ExtResource( 3 )
 hframes = 4
-frame = 1
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.81899e-12, -52 )

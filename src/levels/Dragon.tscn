@@ -24,25 +24,25 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 121.0
-height = 234.0
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 100, 69.75 )
 
-[node name="Area2D" type="Area2D"]
+[node name="Dragon" type="Area2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 568, 367.313 )
-scale = Vector2( 0.566667, 0.568673 )
+position = Vector2( 564, 372 )
+scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
-playing = true
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSprite"]
-position = Vector2( -168.542, -234.162 )
-scale = Vector2( 0.76386, 0.78342 )
-frames = SubResource( 3 )
 frame = 1
 playing = true
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSprite"]
+position = Vector2( -202.941, -204.534 )
+scale = Vector2( 0.76386, 0.78342 )
+frames = SubResource( 3 )
+frame = 3
+playing = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 532, 380 )
-shape = SubResource( 1 )
+position = Vector2( 564, 385.75 )
+shape = SubResource( 4 )

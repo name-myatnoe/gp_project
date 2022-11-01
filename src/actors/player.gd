@@ -24,6 +24,9 @@ func _on_fallzone_body_entered(_body):
 	if Global.lives>=1:
 		get_tree().reload_current_scene()
 
+func _on_Dragon_body_entered(body):
+	get_tree().change_scene("res://src/levels/Win.tscn")
+
 func _physics_process(_delta):
 
 	var direction := get_direction()
@@ -63,3 +66,6 @@ func calculate_stomp_velocity(linear_velocity : Vector2,impulse : float) -> Vect
  
 func add_coins():
 	coins+=1
+
+
+
