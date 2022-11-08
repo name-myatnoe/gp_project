@@ -22,8 +22,9 @@ func _on_Bouncy_body_entered(_body):
 func _on_fallzone_body_entered(_body):
 	Global.lose_life()
 	if Global.lives>=1:
-		get_tree().reload_current_scene()
-
+		position.x=132
+		position.y=466
+		
 func _on_Dragon_body_entered(body):
 	get_tree().change_scene("res://src/levels/Win.tscn")
 
