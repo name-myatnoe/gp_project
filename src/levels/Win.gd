@@ -12,3 +12,16 @@ func _ready():
 
 func _on_Main_menu_pressed():
 	get_tree().change_scene("res://src/levels/Menu.tscn") 
+
+
+func _on_bg_ready():
+	$bg.play() 
+
+
+func _on_Main_menu_mouse_entered():
+	$chime.play()
+	
+
+
+func _on_Main_menu_mouse_exited():
+	$chime.stop()

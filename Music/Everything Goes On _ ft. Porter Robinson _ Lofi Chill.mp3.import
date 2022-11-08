@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Everything Goes On _ ft. Porter Robinson _ Lofi Chill.mp3-d098e08be3eeb8f61d8e53035a0e496e.mp3str"
+
+[deps]
+
+source_file="res://Music/Everything Goes On _ ft. Porter Robinson _ Lofi Chill.mp3"
+dest_files=[ "res://.import/Everything Goes On _ ft. Porter Robinson _ Lofi Chill.mp3-d098e08be3eeb8f61d8e53035a0e496e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

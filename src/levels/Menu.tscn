@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/levels/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Menu+GM/7eaac6bdd74453be0b9d62199fde2d6c.jpg" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Menu+GM/Game_title.png" type="Texture" id=5]
 [ext_resource path="res://src/Objects/Wind.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/!!.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Music/chime-sound-7143.mp3" type="AudioStream" id=8]
+[ext_resource path="res://src/levels/bg_scene.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=10]
 size = 39
@@ -54,7 +56,7 @@ script = ExtResource( 1 )
 position = Vector2( -493, 15 )
 
 [node name="!!" parent="Wind" instance=ExtResource( 7 )]
-position = Vector2( 493, -15 )
+position = Vector2( 462, -8 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -140,15 +142,26 @@ scale = Vector2( 1.06924, 1.21903 )
 texture = ExtResource( 2 )
 
 [node name="C5B3200717E6A1015283235Df6A01F08" type="Sprite" parent="ParallaxBackground/ParallaxLayer/7Eaac6Bdd74453Be0B9D62199Fde2D6c"]
-position = Vector2( -3.63124, -1.03917 )
+position = Vector2( 0.400643, -0.958756 )
 rotation = 1.5708
-scale = Vector2( 0.585972, 0.689718 )
+scale = Vector2( 0.589048, 0.6928 )
 texture = ExtResource( 3 )
 
 [node name="Title" type="Sprite" parent="ParallaxBackground/ParallaxLayer/7Eaac6Bdd74453Be0B9D62199Fde2D6c/C5B3200717E6A1015283235Df6A01F08"]
 position = Vector2( 68.9704, 2.87082 )
 texture = ExtResource( 5 )
 
+[node name="chime" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Background music" parent="." instance=ExtResource( 9 )]
+
+[connection signal="mouse_entered" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer1/Start Button/Map" to="." method="_on_Map_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer1/Start Button/Map" to="." method="_on_Map_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer1/Start Button/Map" to="." method="_on_Map_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer1/Start Button/Bye2" to="." method="_on_Bye2_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer1/Start Button/Bye2" to="." method="_on_Bye2_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer1/Start Button/Bye2" to="." method="_on_Bye_pressed"]

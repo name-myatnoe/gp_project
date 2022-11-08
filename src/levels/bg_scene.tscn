@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music/Everything Goes On _ ft. Porter Robinson _ Lofi Chill.mp3" type="AudioStream" id=1]
+
+[node name="Background music" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -7.091
+pitch_scale = 1.14
+autoplay = true
+mix_target = 1

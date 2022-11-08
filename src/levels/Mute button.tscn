@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu+GM/song.png" type="Texture" id=1]
+[ext_resource path="res://Menu+GM/Mute.png" type="Texture" id=2]
+[ext_resource path="res://src/levels/bg_scene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/levels/Mute button.gd" type="Script" id=4]
+[ext_resource path="res://src/levels/Mute.gd" type="Script" id=5]
+
+[node name="Mute button" type="Control"]
+anchor_right = 0.545
+anchor_bottom = 0.733
+margin_left = 2.0
+margin_right = -0.0800171
+margin_bottom = 0.199982
+script = ExtResource( 4 )
+
+[node name="mute" type="TextureButton" parent="."]
+anchor_right = 0.551
+anchor_bottom = 0.94
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 13.52
+margin_bottom = 22.32
+toggle_mode = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+script = ExtResource( 5 )
+
+[node name="bgmusic" parent="." instance=ExtResource( 3 )]
+autoplay = false
+
+[connection signal="pressed" from="mute" to="mute" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="mute" to="mute" method="_on_mute_pressed"]

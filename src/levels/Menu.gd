@@ -21,8 +21,40 @@ func _on_Start_Button_pressed():
 
 
 func _on_Bye_pressed():
-	get_tree().quit() 
+	get_tree().quit()
 
 
 func _on_Map_pressed():
 	get_tree().change_scene("res://src/levels/Map.tscn")
+
+
+
+
+func _on_Start_Button_mouse_entered():
+	$chime.play()
+	pass # Replace with function body.
+
+
+func _on_Map_mouse_entered():
+	$chime.play()
+	pass # Replace with function body.
+
+
+func _on_Bye2_mouse_entered():
+	$chime.play()
+	pass # Replace with function body.
+
+
+func _on_Start_Button_mouse_exited():
+	$chime.stop()
+	pass # Replace with function body.
+
+
+func _on_Map_mouse_exited():
+	$chime.stop()
+	pass # Replace with function body.
+
+
+func _on_Bye2_mouse_exited():
+	$chime.stop()
+	pass # Replace with function body.

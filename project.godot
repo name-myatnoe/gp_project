@@ -27,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://src/levels/global.gd"
+BgScene="res://src/levels/bg_scene.tscn"
 
 [display]
 
