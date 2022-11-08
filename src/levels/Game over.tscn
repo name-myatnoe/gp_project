@@ -103,7 +103,7 @@ texture = ExtResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="!!/Sprite"]
 position = Vector2( -230.164, 128.92 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="chime" type="AudioStreamPlayer" parent="."]

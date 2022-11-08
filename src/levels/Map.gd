@@ -54,4 +54,5 @@ func _on_back_mouse_exited():
 
 
 func _on_1_pressed():
-		get_tree().change_scene("res://src/levels/Testkzt.tscn") 
+	Global.lives=Global.max_lives
+	get_tree().change_scene("res://src/levels/Testkzt.tscn") 
