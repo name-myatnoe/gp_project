@@ -2,50 +2,24 @@ extends actors
 
 export var stomp_impulse = 1000.0
 export var bouncy=-2000
-var coins=0
-var direction 
 
 func _on_enemyDetector_area_entered(_area):
 	velocity = calculate_stomp_velocity(velocity,stomp_impulse)
 
 func _on_enemyDetector_body_entered(_body):
-	set_modulate(Color(1,0.3,0.3,0.3))
-	Global.lose_life()
-	$Timer.start()
-
-func _on_Timer_timeout():
-	set_modulate(Color(1,1,1,1))
+	queue_free()
 
 func _on_Bouncy_body_entered(_body):
 	velocity.y=bouncy
-	$Eaint.play("jump")
-	$Ladia.play("L_jump")
-	
-
-func _on_fallzone_body_entered(_body):
-	Global.lose_life()
-	if Global.lives>=1:
-		position.x=132
-		position.y=466
-
-func _on_Dragon_body_entered(body):
-	
-	get_tree().change_scene("res://src/levels/Win.tscn")
 
 func _physics_process(_delta):
-	if .is_on_floor():
-		$Eaint.play("Walk")
-		$Ladia.play("L_walk")
-	else:
-		$Eaint.play("jump")
-		$Ladia.play("L_jump")
-	direction=get_direction()
+
+	var direction := get_direction()
 	var is_jump_interrupted := Input.is_action_just_released("jump") and velocity.y < 0
 	velocity = calculate_move_velocity(velocity,speed,direction,is_jump_interrupted)
 	velocity = move_and_slide(velocity,normal_floor)
-	
-		
-	
+				
+
 func _ready():
 	pass
 
@@ -74,6 +48,4 @@ func calculate_stomp_velocity(linear_velocity : Vector2,impulse : float) -> Vect
 	var new_velocity := linear_velocity
 	new_velocity.y = -impulse
 	return new_velocity
- 
-func add_coins():
-	coins+=1
+

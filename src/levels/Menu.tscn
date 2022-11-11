@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/levels/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Menu+GM/7eaac6bdd74453be0b9d62199fde2d6c.jpg" type="Texture" id=2]
@@ -9,9 +9,6 @@
 [ext_resource path="res://src/Objects/!!.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Music/chime-sound-7143.mp3" type="AudioStream" id=8]
 [ext_resource path="res://src/levels/bg_scene.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/levels/TextureButton.gd" type="Script" id=10]
-[ext_resource path="res://Menu+GM/song.png" type="Texture" id=11]
-[ext_resource path="res://Menu+GM/Mute.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=10]
 size = 39
@@ -81,17 +78,6 @@ margin_right = 709.0
 margin_bottom = 198.0
 color = Color( 0.972549, 0.835294, 1, 1 )
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 919.0
-margin_top = 13.0
-margin_right = 1404.0
-margin_bottom = 446.0
-rect_scale = Vector2( 0.2, 0.2 )
-toggle_mode = true
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 12 )
-script = ExtResource( 10 )
-
 [node name="VBoxContainer1" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -156,7 +142,7 @@ scale = Vector2( 1.06924, 1.21903 )
 texture = ExtResource( 2 )
 
 [node name="C5B3200717E6A1015283235Df6A01F08" type="Sprite" parent="ParallaxBackground/ParallaxLayer/7Eaac6Bdd74453Be0B9D62199Fde2D6c"]
-position = Vector2( -0.977478, -0.82457 )
+position = Vector2( 0.400643, -0.958756 )
 rotation = 1.5708
 scale = Vector2( 0.589048, 0.6928 )
 texture = ExtResource( 3 )
@@ -170,7 +156,6 @@ stream = ExtResource( 8 )
 
 [node name="Background music" parent="." instance=ExtResource( 9 )]
 
-[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_pressed"]

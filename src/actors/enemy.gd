@@ -15,6 +15,8 @@ func _physics_process(delta):
 	if is_on_wall():
 		velocity.x *= -1
 	velocity.y = move_and_slide(velocity,normal_floor).y
+	if Global.lives==0:
+		velocity.x=0
 
 
 

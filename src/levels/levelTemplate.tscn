@@ -39,6 +39,13 @@ __meta__ = {
 "_edit_vertical_guides_": [ -170.0 ]
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -348.0
+margin_top = -912.0
+margin_right = 4984.0
+margin_bottom = 937.0
+color = Color( 0.443137, 0.305882, 0.305882, 1 )
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -174, 13 )
 tile_set = SubResource( 1 )
