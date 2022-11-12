@@ -5,7 +5,7 @@ var lives=max_lives
 var hub
 
 func lose_life():
-	lives-=1
-	hub.load_heart()
-	if lives<=0:
+	Global.lives-=1
+	Global.hub.load_heart()
+	if Global.lives<=0:
 		get_tree().change_scene("res://src/levels/Game over.tscn")

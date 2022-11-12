@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Coin/gold_1.png" type="Texture" id=1]
 [ext_resource path="res://Coin/gold_2.png" type="Texture" id=2]
 [ext_resource path="res://Coin/gold_3.png" type="Texture" id=3]
 [ext_resource path="res://Coin.gd" type="Script" id=4]
+[ext_resource path="res://Music/mixkit-game-treasure-coin-2038.wav" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 47.1699
@@ -27,6 +28,11 @@ shape = SubResource( 1 )
 position = Vector2( 5, 0 )
 frames = SubResource( 2 )
 animation = "Spin"
+frame = 2
 playing = true
 
+[node name="collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
 [connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Coin_body_exited"]

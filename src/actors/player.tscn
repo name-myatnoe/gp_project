@@ -1,97 +1,101 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/actors/Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://src/actors/player.gd" type="Script" id=2]
-[ext_resource path="res://sprite/player/eaint_spite.png" type="Texture" id=3]
-[ext_resource path="res://sprite/player/Ladii_sprite.png" type="Texture" id=4]
-
-[sub_resource type="AnimationNodeAnimation" id=5]
-animation = "Ladii_idle"
-
-[sub_resource type="AnimationNodeStateMachine" id=6]
-states/Ladii_idle/node = SubResource( 5 )
-states/Ladii_idle/position = Vector2( 262, 77 )
-start_node = "Ladii_idle"
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=7]
+[ext_resource path="res://sprite/eaint_wallk1.png" type="Texture" id=3]
+[ext_resource path="res://sprite/player/eaint_jump.png" type="Texture" id=4]
+[ext_resource path="res://sprite/eaint_wallk3.png" type="Texture" id=5]
+[ext_resource path="res://sprite/eaint_wallk4.png" type="Texture" id=6]
+[ext_resource path="res://sprite/player/Ladii walk 1.png" type="Texture" id=7]
+[ext_resource path="res://sprite/Ladii walk 4.png" type="Texture" id=8]
+[ext_resource path="res://sprite/player/Ladii walk 2.png" type="Texture" id=9]
+[ext_resource path="res://sprite/player/Ladia jump2.png" type="Texture" id=10]
+[ext_resource path="res://sprite/eaint_wallk2.png" type="Texture" id=11]
+[ext_resource path="res://sprite/player/Ladii walk 3.png" type="Texture" id=12]
+[ext_resource path="res://sprite/Ladii die.png" type="Texture" id=13]
+[ext_resource path="res://sprite/Ladii die2.png" type="Texture" id=14]
+[ext_resource path="res://sprite/Eaint_die2.png" type="Texture" id=15]
+[ext_resource path="res://sprite/Eaint_die.png" type="Texture" id=16]
+[ext_resource path="res://Music/jump.mp3" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=8]
 resource_name = "Ladii_idle"
 length = 0.668
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 1, 2, 3, 3 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../sprite2:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = false
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 2,
-"values": [ 1, 2, 3, 3 ]
-}
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 56.4538, 61.4711 )
+[sub_resource type="GDScript" id=13]
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+} ]
+script = SubResource( 13 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "L_jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "L_walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 37.5, 50.4688 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 56.875, 63.4375 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 40.8333, 54.875 )
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 56.4538, 61.4711 )
 
 [node name="player" type="KinematicBody2D"]
-collision_mask = 8
+collision_mask = 10
 script = ExtResource( 2 )
 speed = Vector2( 400, 1500 )
 gravity = 4500
 bouncy = -2500
 
-[node name="sprite" type="Sprite" parent="."]
-position = Vector2( 35, -75 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 4 )
-hframes = 4
-frame = 2
-
-[node name="AnimationTree" type="AnimationTree" parent="sprite"]
-tree_root = SubResource( 6 )
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource( 7 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="sprite"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Eaint")
 anims/Ladii_idle = SubResource( 8 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -50 )
-scale = Vector2( 0.805969, 0.813359 )
-shape = SubResource( 9 )
+[node name="Eaint" type="AnimatedSprite" parent="."]
+position = Vector2( -39, -74 )
+scale = Vector2( 0.902299, 0.78 )
+frames = SubResource( 14 )
+animation = "Walk"
+frame = 1
+speed_scale = 0.3
 
-[node name="sprite2" type="Sprite" parent="."]
-position = Vector2( -13, -74 )
+[node name="Ladia" type="AnimatedSprite" parent="."]
+position = Vector2( 33, -77 )
 scale = Vector2( 0.87, 0.8 )
-texture = ExtResource( 3 )
-hframes = 4
+frames = SubResource( 12 )
+animation = "L_walk"
 frame = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.81899e-12, -52 )
-scale = Vector2( 0.8, 0.8 )
-shape = SubResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 12, -94 )
@@ -125,10 +129,23 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyDetector"]
 modulate = Color( 0.172549, 0.117647, 0.823529, 1 )
-position = Vector2( 0.833328, -48.875 )
+position = Vector2( -0.416665, -50.5313 )
 shape = SubResource( 11 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4.75, -52 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 6.74999, -50 )
+scale = Vector2( 0.805969, 0.813359 )
+shape = SubResource( 9 )
+
+[node name="jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
 
 [connection signal="area_entered" from="enemyDetector" to="." method="_on_enemyDetector_area_entered"]
 [connection signal="body_entered" from="enemyDetector" to="." method="_on_enemyDetector_body_entered"]

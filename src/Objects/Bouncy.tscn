@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://sprite/Bouncy/bouncy_hurt2mdp.png" type="Texture" id=1]
 [ext_resource path="res://sprite/Bouncy/bouncy_hurt3.png" type="Texture" id=2]
 [ext_resource path="res://sprite/Bouncy/bouncy_idle1.png" type="Texture" id=3]
 [ext_resource path="res://sprite/Bouncy/bouncy_idle2.png" type="Texture" id=4]
 [ext_resource path="res://src/Objects/Bouncy.gd" type="Script" id=5]
+[ext_resource path="res://Music/mixkit-cartoon-creature-pain-scream-101.wav" type="AudioStream" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -59,3 +60,6 @@ collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top checker"]
 shape = SubResource( 4 )
+
+[node name="bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )

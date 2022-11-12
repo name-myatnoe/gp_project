@@ -20,7 +20,7 @@ func _on_bg_ready():
 
 func _on_Main_menu_mouse_entered():
 	$chime.play()
-
+	
 
 
 func _on_Main_menu_mouse_exited():

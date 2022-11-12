@@ -9,8 +9,8 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$"VBoxContainer1/Start Button".grab_focus()
-
-
+	
+	
 
 
 

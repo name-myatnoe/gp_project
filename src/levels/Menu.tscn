@@ -155,6 +155,7 @@ texture = ExtResource( 5 )
 stream = ExtResource( 8 )
 
 [node name="Background music" parent="." instance=ExtResource( 9 )]
+autoplay = true
 
 [connection signal="mouse_entered" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_mouse_exited"]

@@ -7,6 +7,7 @@ func _physics_process(_delta):
 	for body in bodies:
 		if body.name=="player":
 			animSprite.play("hurt")
+			$bounce.play()
 			yield(animSprite,"animation_finished") 
 			animSprite.play("idle ")
 		else:
