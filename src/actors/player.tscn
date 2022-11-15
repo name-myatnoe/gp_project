@@ -63,7 +63,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 37.5, 50.4688 )
+extents = Vector2( 42.2917, 50.4688 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 56.875, 63.4375 )
@@ -129,7 +129,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyDetector"]
 modulate = Color( 0.172549, 0.117647, 0.823529, 1 )
-position = Vector2( -0.416665, -50.5313 )
+position = Vector2( 4.375, -50.5313 )
 shape = SubResource( 11 )
 
 [node name="Timer" type="Timer" parent="."]

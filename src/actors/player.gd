@@ -28,9 +28,7 @@ func _on_fallzone_body_entered(_body):
 		position.x=132
 		position.y=466
 
-func _on_Dragon_body_entered(body):
-	
-	get_tree().change_scene("res://src/levels/Win.tscn")
+
 
 func _physics_process(_delta):
 	if .is_on_floor():
