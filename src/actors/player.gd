@@ -34,10 +34,12 @@ func _physics_process(_delta):
 	if .is_on_floor():
 		$Eaint.play("Walk")
 		$Ladia.play("L_walk")
+		$jump.play()
 	else:
+		
 		$Eaint.play("jump")
 		$Ladia.play("L_jump")
-		$jump.play()
+		
 	
 	direction=get_direction()
 	var is_jump_interrupted := Input.is_action_just_released("jump") and velocity.y < 0

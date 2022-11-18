@@ -146,6 +146,7 @@ shape = SubResource( 9 )
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 17 )
+volume_db = 0.049
 
 [connection signal="area_entered" from="enemyDetector" to="." method="_on_enemyDetector_area_entered"]
 [connection signal="body_entered" from="enemyDetector" to="." method="_on_enemyDetector_body_entered"]
