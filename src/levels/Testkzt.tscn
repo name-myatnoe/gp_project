@@ -222,7 +222,7 @@ position = Vector2( 3045, 692 )
 position = Vector2( 5640, 679 )
 
 [node name="Dragon" parent="." instance=ExtResource( 19 )]
-position = Vector2( 6427, -141 )
+position = Vector2( 6505, -143 )
 scale = Vector2( 1.50225, 1.30045 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
