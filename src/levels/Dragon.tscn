@@ -27,7 +27,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 109.625, 121.063 )
+extents = Vector2( 80.625, 121.063 )
 
 [node name="Dragon" type="Area2D"]
 script = ExtResource( 8 )
@@ -42,11 +42,11 @@ playing = true
 position = Vector2( -276.207, -240.107 )
 scale = Vector2( 0.76386, 0.78342 )
 frames = SubResource( 3 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 497.375, 333.063 )
+position = Vector2( 468.375, 333.063 )
 shape = SubResource( 4 )
 
 [node name="dragon" type="AudioStreamPlayer" parent="."]
