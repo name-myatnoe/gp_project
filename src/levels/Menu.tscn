@@ -78,6 +78,21 @@ margin_right = 709.0
 margin_bottom = 198.0
 color = Color( 0.972549, 0.835294, 1, 1 )
 
+[node name="story" type="Button" parent="."]
+margin_left = 695.0
+margin_top = 152.0
+margin_right = 833.0
+margin_bottom = 203.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 1 )
+shortcut_in_tooltip = false
+text = "Story "
+
 [node name="VBoxContainer1" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -157,6 +172,9 @@ stream = ExtResource( 8 )
 [node name="Background music" parent="." instance=ExtResource( 9 )]
 autoplay = true
 
+[connection signal="mouse_entered" from="story" to="." method="_on_story_mouse_entered"]
+[connection signal="mouse_exited" from="story" to="." method="_on_story_mouse_exited"]
+[connection signal="pressed" from="story" to="." method="_on_story_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer1/Start Button" to="." method="_on_Start_Button_pressed"]

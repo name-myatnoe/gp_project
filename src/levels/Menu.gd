@@ -58,3 +58,16 @@ func _on_Map_mouse_exited():
 func _on_Bye2_mouse_exited():
 	$chime.stop()
 	pass # Replace with function body.
+
+
+func _on_story_pressed():
+	get_tree().change_scene("res://src/levels/story1.tscn")
+
+
+
+func _on_story_mouse_entered():
+	$chime.play()
+
+
+func _on_story_mouse_exited():
+	$chime.stop()

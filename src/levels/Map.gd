@@ -55,3 +55,7 @@ func _on_back_mouse_exited():
 
 func _on_1_pressed():
 		get_tree().change_scene("res://src/levels/Testkzt.tscn") 
+
+
+func _on_2_pressed():
+	get_tree().change_scene("res://src/levels/levelTemplate.tscn") 
