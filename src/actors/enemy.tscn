@@ -13,8 +13,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 19.0
-height = 6.0
+radius = 23.0
+height = 16.0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 17.75, 6.125 )
@@ -30,11 +30,11 @@ scale = Vector2( 0.101693, 0.102392 )
 frames = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3, -8 )
+position = Vector2( -2, -2 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( -0.571427, 0 )
+position = Vector2( -1, 0 )
 scale = Vector2( 0.971429, 0.857143 )
 rect = Rect2( -20, -25, 35, 35 )
 process_parent = true

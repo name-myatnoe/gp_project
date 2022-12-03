@@ -766,7 +766,6 @@ text = "##
 position = Vector2( 195, 33 )
 scale = Vector2( 0.619048, 0.595238 )
 frames = SubResource( 20 )
-frame = 2
 playing = true
 
 [connection signal="body_entered" from="Bouncy" to="player" method="_on_Bouncy_body_entered"]
