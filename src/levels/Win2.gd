@@ -1,6 +1,7 @@
 extends Control
 
 
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -29,12 +30,5 @@ func _on_Main_menu_mouse_exited():
 
 
 
-func _on_Next_mouse_entered():
-	$chime.play()
-
-func _on_Next_mouse_exited():
-	$chime.stop()
-
-
-func _on_Next_pressed():
-	get_tree().change_scene("res://src/levels/Testkzt - Copy.tscn")
+func _on_After_pressed():
+	get_tree().change_scene("res://src/levels/Menu.tscn") 

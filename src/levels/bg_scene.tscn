@@ -4,6 +4,6 @@
 
 [node name="Background music" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
-volume_db = -7.091
+volume_db = 5.909
 pitch_scale = 1.14
 mix_target = 1

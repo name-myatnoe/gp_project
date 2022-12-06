@@ -1,19 +1,19 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Menu+GM/win bg.png" type="Texture" id=1]
-[ext_resource path="res://Menu+GM/7eaac6bdd74453be0b9d62199fde2d6c.jpg" type="Texture" id=2]
+[ext_resource path="res://Fonts/ArchitectsDaughter.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Music/Nyan Nyanpasu - Nyanpasu Song (mp3cut.net).mp3" type="AudioStream" id=2]
 [ext_resource path="res://Menu+GM/win.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/ArchitectsDaughter.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Menu+GM/win pic.png" type="Texture" id=5]
-[ext_resource path="res://Menu+GM/balloon.png" type="Texture" id=6]
-[ext_resource path="res://Menu+GM/balloon2.png" type="Texture" id=7]
-[ext_resource path="res://src/levels/Win.gd" type="Script" id=8]
-[ext_resource path="res://Music/chime-sound-7143.mp3" type="AudioStream" id=9]
-[ext_resource path="res://Music/Nyan Nyanpasu - Nyanpasu Song (mp3cut.net).mp3" type="AudioStream" id=10]
+[ext_resource path="res://Menu+GM/win pic.png" type="Texture" id=4]
+[ext_resource path="res://Menu+GM/balloon2.png" type="Texture" id=5]
+[ext_resource path="res://Menu+GM/win bg.png" type="Texture" id=6]
+[ext_resource path="res://Menu+GM/balloon.png" type="Texture" id=7]
+[ext_resource path="res://src/levels/Win2.gd" type="Script" id=8]
+[ext_resource path="res://Menu+GM/7eaac6bdd74453be0b9d62199fde2d6c.jpg" type="Texture" id=9]
+[ext_resource path="res://Music/chime-sound-7143.mp3" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 23
-font_data = ExtResource( 4 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.686275, 0.443137, 0.776471, 1 )
@@ -24,7 +24,7 @@ border_color = Color( 0.717647, 0.0470588, 0.694118, 1 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 23
-font_data = ExtResource( 4 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.905882, 0.721569, 0.721569, 1 )
@@ -35,7 +35,7 @@ bg_color = Color( 1, 0.823529, 0.823529, 1 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -72,11 +72,10 @@ custom_styles/normal = SubResource( 3 )
 shortcut_in_tooltip = false
 text = "Main Menu"
 
-[node name="Next" type="Button" parent="VBoxContainer3/Main menu"]
-margin_left = 251.0
-margin_top = -1.0
-margin_right = 451.0
-margin_bottom = 44.0
+[node name="After" type="Button" parent="VBoxContainer3/Main menu"]
+margin_left = 248.0
+margin_right = 448.0
+margin_bottom = 45.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
@@ -84,7 +83,7 @@ custom_styles/hover = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
 toggle_mode = true
 shortcut_in_tooltip = false
-text = "Next"
+text = "After myth "
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="VBoxContainer3"]
 
@@ -94,7 +93,7 @@ text = "Next"
 position = Vector2( 515, 302 )
 rotation = 4.71239
 scale = Vector2( 1.06924, 1.21903 )
-texture = ExtResource( 2 )
+texture = ExtResource( 9 )
 
 [node name="Title" type="Sprite" parent="VBoxContainer3/ParallaxBackground/ParallaxLayer/7Eaac6Bdd74453Be0B9D62199Fde2D6c"]
 position = Vector2( -0.159119, -34.5315 )
@@ -107,29 +106,30 @@ visible = false
 position = Vector2( -457.559, -60.4194 )
 rotation = 1.5708
 scale = Vector2( 0.585972, 0.689718 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 612.278, 356 )
 scale = Vector2( 0.651197, 0.603086 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sprite"]
 position = Vector2( -5.90164, 4.97449 )
 frames = SubResource( 7 )
+frame = 1
 speed_scale = 0.5
 playing = true
 
 [node name="bg" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 2 )
 
 [node name="chime" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 
 [connection signal="mouse_entered" from="VBoxContainer3/Main menu" to="." method="_on_Main_menu_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer3/Main menu" to="." method="_on_Main_menu_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer3/Main menu" to="." method="_on_Main_menu_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer3/Main menu/Next" to="." method="_on_Next_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer3/Main menu/Next" to="." method="_on_Next_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer3/Main menu/Next" to="." method="_on_Next_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer3/Main menu/After" to="." method="_on_again_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer3/Main menu/After" to="." method="_on_again_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer3/Main menu/After" to="." method="_on_After_pressed"]
 [connection signal="ready" from="bg" to="." method="_on_bg_ready"]

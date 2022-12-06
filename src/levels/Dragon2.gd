@@ -18,4 +18,4 @@ func _on_Dragon2_body_entered(body):
 
 
 func _on_Dragon2_body_exited(body):
-	get_tree().change_scene("res://src/levels/Win.tscn")
+	get_tree().change_scene("res://src/levels/Win2.tscn")

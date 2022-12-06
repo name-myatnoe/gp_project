@@ -1,21 +1,21 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Menu+GM/7eaac6bdd74453be0b9d62199fde2d6c.jpg" type="Texture" id=1]
-[ext_resource path="res://Menu+GM/lose.png" type="Texture" id=2]
-[ext_resource path="res://Menu+GM/bg.plain.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/ArchitectsDaughter.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://src/levels/Game over.gd" type="Script" id=5]
-[ext_resource path="res://src/Objects/!!.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Menu+GM/gameover.pic.png" type="Texture" id=7]
-[ext_resource path="res://Menu+GM/angry3.png" type="Texture" id=8]
-[ext_resource path="res://Menu+GM/angry2.png" type="Texture" id=9]
-[ext_resource path="res://Menu+GM/angry1.png" type="Texture" id=10]
+[ext_resource path="res://Fonts/ArchitectsDaughter.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Music/bg2.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Menu+GM/angry2.png" type="Texture" id=3]
+[ext_resource path="res://Menu+GM/gameover.pic.png" type="Texture" id=4]
+[ext_resource path="res://Menu+GM/angry3.png" type="Texture" id=5]
+[ext_resource path="res://Menu+GM/bg.plain.png" type="Texture" id=6]
+[ext_resource path="res://Menu+GM/angry1.png" type="Texture" id=7]
+[ext_resource path="res://Menu+GM/lose.png" type="Texture" id=8]
+[ext_resource path="res://src/levels/Game over2.gd" type="Script" id=9]
+[ext_resource path="res://Menu+GM/7eaac6bdd74453be0b9d62199fde2d6c.jpg" type="Texture" id=10]
 [ext_resource path="res://Music/chime-sound-7143.mp3" type="AudioStream" id=11]
-[ext_resource path="res://Music/bg2.mp3" type="AudioStream" id=12]
+[ext_resource path="res://src/Objects/!!.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 23
-font_data = ExtResource( 4 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.686275, 0.443137, 0.776471, 1 )
@@ -26,7 +26,7 @@ border_color = Color( 0.717647, 0.0470588, 0.694118, 1 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 23
-font_data = ExtResource( 4 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.905882, 0.721569, 0.721569, 1 )
@@ -37,7 +37,7 @@ bg_color = Color( 1, 0.823529, 0.823529, 1 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -47,7 +47,7 @@ animations = [ {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 7.0
-script = ExtResource( 5 )
+script = ExtResource( 9 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -92,25 +92,25 @@ toggle_mode = true
 shortcut_in_tooltip = false
 text = "Play again ?"
 
-[node name="!!" parent="." instance=ExtResource( 6 )]
+[node name="!!" parent="." instance=ExtResource( 12 )]
 position = Vector2( -86, -111 )
 
 [node name="Sprite" type="Sprite" parent="!!"]
 position = Vector2( 647, 463 )
 scale = Vector2( 0.677778, 0.603086 )
-texture = ExtResource( 7 )
+texture = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="!!/Sprite"]
 position = Vector2( -230.164, 128.92 )
 frames = SubResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="chime" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 
 [node name="bg" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -120,18 +120,18 @@ stream = ExtResource( 12 )
 position = Vector2( 515, 302 )
 rotation = 4.71239
 scale = Vector2( 1.06924, 1.21903 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 
 [node name="C5B3200717E6A1015283235Df6A01F08" type="Sprite" parent="ParallaxBackground/ParallaxLayer/7Eaac6Bdd74453Be0B9D62199Fde2D6c"]
 position = Vector2( 0.967065, -1.49595 )
 rotation = 1.5708
 scale = Vector2( 0.588004, 0.696583 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="Title" type="Sprite" parent="ParallaxBackground/ParallaxLayer/7Eaac6Bdd74453Be0B9D62199Fde2D6c/C5B3200717E6A1015283235Df6A01F08"]
 position = Vector2( 14.3727, -51.3682 )
 scale = Vector2( 0.846135, 0.830886 )
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 
 [connection signal="mouse_entered" from="VBoxContainer2/Main menu" to="." method="_on_Main_menu_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer2/Main menu" to="." method="_on_Main_menu_mouse_exited"]

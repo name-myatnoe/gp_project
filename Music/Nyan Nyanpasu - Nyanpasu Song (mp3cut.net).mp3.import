@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Nyan Nyanpasu - Nyanpasu Song (mp3cut.net).mp3-d1466ef2c84f916f11c7b6175f24b5b7.mp3str"
+
+[deps]
+
+source_file="res://Music/Nyan Nyanpasu - Nyanpasu Song (mp3cut.net).mp3"
+dest_files=[ "res://.import/Nyan Nyanpasu - Nyanpasu Song (mp3cut.net).mp3-d1466ef2c84f916f11c7b6175f24b5b7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
