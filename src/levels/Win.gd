@@ -37,4 +37,5 @@ func _on_Next_mouse_exited():
 
 
 func _on_Next_pressed():
+	Global2.lives=Global2.max_lives
 	get_tree().change_scene("res://src/levels/L2.tscn")

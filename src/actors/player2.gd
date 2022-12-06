@@ -25,8 +25,8 @@ func _on_Bouncy_body_entered(_body):
 func _on_fallzone_body_entered(_body):
 	Global2.lose_life2()
 	if Global2.lives>=1:
-		position.x=4113
-		position.y=951
+		position.x=36
+		position.y=35
 
 
 func _physics_process(_delta):
