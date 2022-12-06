@@ -21,11 +21,6 @@ func _on_Main_menu_pressed():
 	get_tree().change_scene("res://src/levels/Menu.tscn")
 
 
-func _on_again_pressed():
-	Global.lives=Global.max_lives
-	get_tree().change_scene("res://src/levels/Testkzt - Copy.tscn")
-
-
 func _on_Main_menu_mouse_entered():
 	$chime.play()
 	pass # Replace with function body.
@@ -35,12 +30,9 @@ func _on_again_mouse_entered():
 	$chime.play()
 	pass # Replace with function body.
 
-
-
 func _on_Main_menu_mouse_exited():
 	$chime.stop()
 	pass # Replace with function body.
-
 
 func _on_again_mouse_exited():
 	$chime.stop()
@@ -49,3 +41,7 @@ func _on_again_mouse_exited():
 
 func _on_bg_ready():
 	$bg.play()
+
+func _on_L2again_pressed():
+	Global2.lives=Global2.max_lives
+	get_tree().change_scene("res://src/levels/L2.tscn")

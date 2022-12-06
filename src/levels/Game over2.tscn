@@ -79,7 +79,7 @@ custom_styles/normal = SubResource( 3 )
 shortcut_in_tooltip = false
 text = "Main Menu"
 
-[node name="again" type="Button" parent="VBoxContainer2/Main menu"]
+[node name="L2-again" type="Button" parent="VBoxContainer2/Main menu"]
 margin_left = 312.0
 margin_right = 512.0
 margin_bottom = 45.0
@@ -103,7 +103,6 @@ texture = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="!!/Sprite"]
 position = Vector2( -230.164, 128.92 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
 [node name="chime" type="AudioStreamPlayer" parent="."]
@@ -136,7 +135,7 @@ texture = ExtResource( 8 )
 [connection signal="mouse_entered" from="VBoxContainer2/Main menu" to="." method="_on_Main_menu_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer2/Main menu" to="." method="_on_Main_menu_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer2/Main menu" to="." method="_on_Main_menu_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer2/Main menu/again" to="." method="_on_again_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer2/Main menu/again" to="." method="_on_again_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer2/Main menu/again" to="." method="_on_again_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer2/Main menu/L2-again" to="." method="_on_again_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer2/Main menu/L2-again" to="." method="_on_again_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer2/Main menu/L2-again" to="." method="_on_L2again_pressed"]
 [connection signal="ready" from="bg" to="." method="_on_bg_ready"]

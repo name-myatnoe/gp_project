@@ -37,4 +37,4 @@ func _on_Next_mouse_exited():
 
 
 func _on_Next_pressed():
-	get_tree().change_scene("res://src/levels/Testkzt - Copy.tscn")
+	get_tree().change_scene("res://src/levels/L2.tscn")

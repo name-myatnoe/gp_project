@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 Global="*res://src/levels/global.gd"
 BgScene="res://src/levels/bg_scene.tscn"
+Global2="*res://src/levels/global2.gd"
 
 [display]
 
