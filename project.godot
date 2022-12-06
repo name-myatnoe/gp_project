@@ -20,8 +20,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="gp_project"
-run/main_scene="res://src/levels/Menu.tscn"
+config/name="gp_project clone"
+run/main_scene="res://src/levels/Testkzt.tscn"
 config/icon="res://icon.png"
 
 [autoload]
