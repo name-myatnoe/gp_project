@@ -79,3 +79,27 @@ func calculate_stomp_velocity(linear_velocity : Vector2,impulse : float) -> Vect
  
 func add_coins():
 	coins+=1
+
+
+func _on_Bouncy7_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Bouncy2_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Bouncy3_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Bouncy4_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Bouncy5_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Bouncy6_body_entered(body):
+	pass # Replace with function body.
