@@ -58,4 +58,4 @@ func _on_1_pressed():
 
 
 func _on_2_pressed():
-	get_tree().change_scene("res://src/levels/levelTemplate.tscn") 
+	get_tree().change_scene("res://src/levels/Testkzt - Copy.tscn") 

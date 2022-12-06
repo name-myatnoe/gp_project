@@ -1,0 +1,57 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Dragons/Heart2.png" type="Texture" id=1]
+[ext_resource path="res://Dragons/Heart0.png" type="Texture" id=2]
+[ext_resource path="res://Dragons/Heart1.png" type="Texture" id=3]
+[ext_resource path="res://Dragons/Heart3.png" type="Texture" id=4]
+[ext_resource path="res://Dragons/Heart4.png" type="Texture" id=5]
+[ext_resource path="res://Music/mixkit-cartoon-character-cute-sneeze-2210 (1).wav" type="AudioStream" id=6]
+[ext_resource path="res://Dragons/Dragon2/Untitled9-20221205232701.PNG" type="Texture" id=7]
+[ext_resource path="res://Dragons/Dragon2/Untitled9-20221205232934.PNG" type="Texture" id=8]
+[ext_resource path="res://src/levels/Dragon2.gd" type="Script" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 196.163
+
+[node name="Dragon2" type="Area2D"]
+script = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 525, 323 )
+scale = Vector2( 0.56875, 0.525 )
+frames = SubResource( 1 )
+speed_scale = 0.5
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="AnimatedSprite"]
+position = Vector2( 230.33, -217.143 )
+scale = Vector2( 0.76386, 0.78342 )
+frames = SubResource( 2 )
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 479, 283 )
+shape = SubResource( 3 )
+
+[node name="dragon2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="body_entered" from="." to="." method="_on_Dragon2_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Dragon2_body_exited"]
