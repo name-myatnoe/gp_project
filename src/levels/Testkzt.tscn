@@ -416,9 +416,6 @@ scale = Vector2( 1.5, 1.5 )
 [node name="enemy3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2500, 711 )
 scale = Vector2( 1.5, 1.5 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Bouncy" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1941, 436 )
@@ -837,6 +834,7 @@ text = "##
 position = Vector2( 195, 33 )
 scale = Vector2( 0.619048, 0.595238 )
 frames = SubResource( 20 )
+frame = 2
 playing = true
 
 [node name="Background music" parent="." instance=ExtResource( 31 )]
