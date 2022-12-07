@@ -32,7 +32,7 @@ bg_color = Color( 0.580392, 0.631373, 0.901961, 1 )
 bg_color = Color( 0.690196, 0.733333, 0.964706, 1 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 23
+size = 20
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=6]
@@ -134,6 +134,21 @@ shortcut_in_tooltip = false
 text = "Two"
 expand_icon = true
 
+[node name="after" type="Button" parent="."]
+margin_left = 808.0
+margin_top = 541.0
+margin_right = 967.0
+margin_bottom = 592.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+toggle_mode = true
+shortcut_in_tooltip = false
+text = "After Myth"
+expand_icon = true
+
 [node name="chime" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 
@@ -147,3 +162,6 @@ stream = ExtResource( 9 )
 [connection signal="mouse_entered" from="2" to="." method="_on_2_mouse_entered"]
 [connection signal="mouse_exited" from="2" to="." method="_on_2_mouse_exited"]
 [connection signal="pressed" from="2" to="." method="_on_2_pressed"]
+[connection signal="mouse_entered" from="after" to="." method="_on_after_mouse_entered"]
+[connection signal="mouse_exited" from="after" to="." method="_on_after_mouse_exited"]
+[connection signal="pressed" from="after" to="." method="_on_after_pressed"]

@@ -31,4 +31,4 @@ func _on_Main_menu_mouse_exited():
 
 
 func _on_After_pressed():
-	get_tree().change_scene("res://src/levels/Menu.tscn") 
+	get_tree().change_scene("res://src/levels/after1.tscn") 

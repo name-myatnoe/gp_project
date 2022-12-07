@@ -61,3 +61,15 @@ func _on_1_pressed():
 func _on_2_pressed():
 	Global2.lives=Global2.max_lives
 	get_tree().change_scene("res://src/levels/L2.tscn") 
+
+
+func _on_after_pressed():
+	get_tree().change_scene("res://src/levels/after1.tscn") 
+
+
+func _on_after_mouse_entered():
+	$chime.play()
+
+
+func _on_after_mouse_exited():
+	$chime.stop()
